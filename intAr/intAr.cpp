@@ -6,11 +6,10 @@ intAr::intAr()
 {
 	size_ = 1; //
 	try{
-		array_ = new int[size_]; //
+		array_ = new int[size_]{0}; //
 		if (array_ == NULL){
 			throw "Error. Memory not allocated";
 		}
-		array_[0] = 0;
 	}
 	catch (char* err){
 		cout << err << endl;
@@ -162,6 +161,18 @@ ostream &operator<<(ostream& out, const intAr& Array){
 		return out;
 	}
 }
+istream &operator>>(istream& in, intAr& Array){
+	cout << "Enter " << Array.size_ << " elements:" << endl;
+	for (int i = 0; i < Array.size_; i++){
+		in >> Array[i];
+		if (!in){
+			cout << "Error in" << endl;
+			system("pause");
+			exit(1);
+		}
+	}
+}
+
 int& intAr::operator[](int index){ // 
 	try{
 		if (index < 0 || index >= size_){

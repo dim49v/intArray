@@ -22,6 +22,8 @@ public:
 	intAr operator--();
 	int& operator[](int index);
 	friend ostream &operator<<(ostream&,const intAr&);
+	friend istream &operator>>(istream&, intAr&);
+
 	~intAr();
 };
 

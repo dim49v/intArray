@@ -2,7 +2,8 @@
 //Class IntegerArray with methods
 int main(){
 	int a[10]{1, 2, 3, 4, 5, 6, 7, 8, 9};
-	intAr ar (a, 4);
+	intAr ar(5);
+	cin >> ar;
 	cout << ar;
 	intAr ar2 =	ar;
 	ar2--;
